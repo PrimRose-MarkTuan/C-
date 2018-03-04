@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+  int max(int x,int y);
+  int a=0,b=0,t=0;
+  cout<<"Enter two numbers:"<<endl;
+  cin>>a>>b;
+  
+}

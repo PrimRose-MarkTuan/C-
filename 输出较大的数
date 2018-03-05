@@ -7,7 +7,7 @@ int main()
   cout<<"Enter two numbers:"<<endl;
   cin>>a>>b;
   t=max(a,b);
-  cout<<"max="t<<endl;
+  cout<<"max="<<t<<endl;
   return 0;
 }
 int max(int x,int y)

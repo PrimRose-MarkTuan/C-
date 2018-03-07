@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <iterator>
+using namespace std;
+int main()
+{
+	vector<int> v(10,1);
+	for (auto i = v.begin(); i != v.end(); ++i)
+		*i = 2 * (*i);
+	for (auto i = v.begin(); i != v.end(); ++i)
+		cout << *i << " ";
+	cout << endl;
+	return 0;
+}

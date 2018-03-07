@@ -1,0 +1,59 @@
+#include <iostream>
+#include <vector>
+#include <iterator>
+using namespace std;
+int main()
+{
+	vector<int> v;
+	cout << "Please enter some intergers:" << endl;
+	int i;
+	while (cin >> i)
+	{
+		v.push_back(i);
+		if (cin.get() == '\n')
+			break;
+	}
+	if (v.empty())
+	{
+		cout << "Please enter one interger at least." << endl;
+	}
+	else if (v.size()==1)
+	{
+		cout << *v.begin() << " has no adjacent elements." << endl;
+	}
+	else
+	{
+		for (auto t = v.begin(); t + 1 != v.end(); ++t)
+			cout << *t + (*t + 1) << " ";
+	}
+	cout << endl;
+	return 0;
+}
+
+#include <iostream>
+#include <vector>
+#include <iterator>
+using namespace std;
+int main()
+{
+	vector<int> v;
+	cout << "Please enter some intergers:" << endl;
+	int i;
+	while (cin >> i)
+	{
+		v.push_back(i);
+		if (cin.get() == '\n')
+			break;
+	}
+	if (v.empty())
+	{
+		cout << "Please enter one interger at least." << endl;
+	}
+	else
+	{
+		for (auto beg = v.begin(), end = v.end() - 1; beg <= end; ++beg, --end)
+			cout << *beg + *end << " ";
+	}
+	cout << endl;
+	return 0;
+}

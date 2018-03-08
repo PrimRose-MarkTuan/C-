@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main()
+{
+	const vector<string> scores = { "F", "D", "C", "B", "A", "A++" };
+	cout << "Please enter your grade:" << endl;
+	int grade = 0;
+	while (cin >> grade)
+	{
+		int score = grade / 10 - 5;
+		cout << "Your score is:" << (grade < 60 ? scores[0] : scores[score]) << endl;
+	}
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	unsigned a = 0, e = 0, i = 0, o = 0, u = 0;
+	char ch;
+	cin >> ch;
+	if (ch == 'a')
+		++a;
+	else if (ch == 'e')
+		++e;
+	else if (ch == 'i')
+		++i;
+	else if (ch == 'o')
+		++o;
+	else if (ch == 'u')
+		++u;
+	cout << "Number of vowel a: \t" << a << '\n' << "Number of vowel e: \t"
+		<< e << '\n' << "Number of vowel i: \t" << i << '\n'
+		<< "Number of vowel o: \t" << o << '\n' << "Number of vowel u: \t"
+		<< u << endl;
+	return 0;
+}

@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+bool hasUppercase(const string &str)
+{
+	for (auto c:str)
+	if (isupper(c))
+		return true;
+	else
+		return false;
+}
+const string& makeLowercase(string &str)
+{
+	for (auto &c:str)
+	if (isupper(c))
+		c = tolower(c);
+	return str;
+}
+int main()
+{
+	string str = "Mark Tuan";
+	bool b = hasUppercase(str);
+	string str1 = makeLowercase(str);
+	cout << boolalpha << b << endl;
+	cout << str1 << endl;
+	return 0;
+}

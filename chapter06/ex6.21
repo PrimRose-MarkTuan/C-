@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int shuchu(int a, int *const b)
+{
+	if (a >= *b)
+		return a;
+	else
+		return *b;
+}
+int main()
+{
+	cout << "Please enter two numbers:" << endl;
+	int a, b;
+	cin >> a >> b;
+	int max=shuchu(a, &b);
+	cout << max << " is bigger." << endl;
+	return 0;
+}

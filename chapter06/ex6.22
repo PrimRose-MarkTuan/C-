@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+void swap(const int* &a,const int* &b)
+{
+	auto t = a;
+	a = b;
+	b = t;
+}
+int main()
+{
+	int a = 7, b = 9;
+	auto a1 = &a, b1 = &b;
+	swap(a1, b1);
+	cout << "a= " << *a1 << " b= " << *b1 << endl;
+	return 0;
+}

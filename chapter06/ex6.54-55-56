@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+inline int func1(const int a, const int b);
+typedef decltype(func1) fp;
+inline int Numadd(const int n1, const int n2)
+{
+	return n1 + n2;
+}
+inline int Numsub(const int n1, const int n2)
+{
+	return n1 - n2;
+}
+inline int Nummul(const int n1, const int n2)
+{
+	return n1*n2;
+}
+inline int Numdiv(const int n1, const int n2)
+{
+	return n1 / n2;
+}
+vector<fp*> v1{ Numadd, Numsub, Nummul, Numdiv };
+int main()
+{
+	for (auto c = v1.cbegin(); c != v1.cend(); ++c)
+		cout << (*c)(2, 2) << endl;
+	return 0;
+}

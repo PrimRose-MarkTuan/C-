@@ -8,11 +8,18 @@ using namespace std;
 class Person
 {
 public:
-	string name;
-	string address;
+	string &getName(Person &person) const
+	{
+		return name;
+	}
+	string &getAddress(Person &person) const
+	{
+		return address;
+	}
 
 private:
-
+	string name;
+	string address;
 };
 
 Person::Person()

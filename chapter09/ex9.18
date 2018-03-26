@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+#include <deque>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	deque<string> de;
+	for (str; cin >> str; de.push_back(str))
+		;
+	for (auto iter = de.cbegin(); iter != de.cend(); ++iter)
+		cout << *iter << endl;
+	return 0;
+}

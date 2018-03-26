@@ -1,0 +1,16 @@
+#include <iostream>
+#include <vector>
+#include <list>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	list<char*> l1{"MarkTuan","JoeyTuan","RoseTuan"};
+	vector<string> v1;
+	v1.assign(l1.begin(), l1.end());
+	for (auto &c : v1)
+		cout << c << endl;
+	return 0;
+}

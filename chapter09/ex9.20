@@ -1,0 +1,25 @@
+#include <iostream>
+#include <list>
+#include <deque>
+
+using namespace std;
+
+int main()
+{
+	list<int> l1{ 1, 2, 3, 4, 5, 6, 7, 8 };
+	deque<int> de1, de2;
+	for (auto &c : l1)
+	{
+		if (c % 2 == 0)
+			de1.push_back(c);
+		else
+			de2.push_back(c);
+	}
+	for (auto &iter1 : de1)
+		cout << iter1 << " ";
+	cout << endl;
+	for (auto &iter2 : de2)
+		cout << iter2 << " ";
+	cout << endl;
+	return 0;
+}

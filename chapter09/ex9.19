@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	list<string> l1;
+	for (str; cin >> str; l1.push_back(str))
+		;
+	for (auto iter = l1.cbegin(); iter != l1.cend(); ++iter)
+		cout << *iter << endl;
+	return 0;
+}

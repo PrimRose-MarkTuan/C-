@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+void elimDups(vector<string> &words)
+{
+	sort(words.begin(), words.end());
+	for (auto i : words)
+		cout << i << " ";
+	cout << endl;
+	auto end_unique = unique(words.begin(), words.end());
+	for (auto i : words)
+		cout << i << " ";
+	cout << endl;
+	words.erase(end_unique, words.end());
+	for (auto i : words)
+		cout << i << " ";
+	cout << endl;
+}
+int main()
+{
+	vector<string> words{ "a", "v", "a", "s", "v", "a", "a" };
+	for (auto i : words)
+		cout << i << " ";
+	cout << endl;
+	elimDups(words);
+	return 0;
+}

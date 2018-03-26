@@ -1,0 +1,17 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+	vector<int> v = { 1, 2, 3, 4, 5, 6, 6, 6, 2 };
+	list<string> l = { "aa", "aaa", "aa", "cc" };
+	auto result1 = count(v.cbegin(), v.cend(), 6);
+	auto result2 = count(l.cbegin(), l.cend(), "aa");
+	cout << result1 << " " << result2 << endl;
+	return 0;
+}

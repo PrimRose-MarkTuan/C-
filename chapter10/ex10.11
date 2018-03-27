@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <numeric>
+#include <list>
+
+using namespace std;
+
+bool isShorter(const string &s1, const string &s2)
+{
+	return s1.size() < s2.size();
+}
+
+template<typename Sequence> inline ostream &println(Sequence const& seq)
+{
+	for (auto &i : seq)
+		cout << i << " ";
+	cout << endl;
+	return cout;
+}
+
+void elimdups(vector<string> &words)
+{
+	sort(words.begin(), words.end());
+	auto new_end = unique(words.begin(), words.end());
+	words.erase(new_end, words.end());
+}
+
+int main()
+{
+	vector<string> words{ "the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle" };
+	elimdups(words);
+	sort(words.begin(), words.end(), isShorter);
+	println(words);
+	return 0;
+}

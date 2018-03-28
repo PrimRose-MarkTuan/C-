@@ -1,0 +1,17 @@
+#include <iostream>
+#include <iterator>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	istream_iterator<int> in(cin), eof;
+	vector<int> vec;
+	while (in != eof)
+		vec.push_back(*in++);
+	sort(vec.begin(), vec.end());
+	copy(vec.cbegin(), vec.cend(), ostream_iterator<int>(cout, " "));
+	return 0;
+}

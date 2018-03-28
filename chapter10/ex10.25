@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <functional>
+
+using namespace std;
+using namespace placeholders;
+
+void elimdups(vector<string> &vs)
+{
+	sort(vs.begin(), vs.end());
+	auto new_end = unique(vs.begin(), vs.end());
+	vs.erase(new_end, vs.end());
+}
+
+bool check_size(const string &s, string::size_type sz)
+{
+	return s.size() >= sz;
+}
+
+void biggies(vector<string> &v, vector<string>::size_type sz)
+{
+	elimdups(v);
+	auto iter = stable_partition(v.begin(), v.end(), bind(check_size, _1, sz));
+	for_each(v.begin(), iter, [](const string &s){cout << s << " "; });
+	cout << endl;
+}
+
+int main()
+{
+	vector<std::string> v{ "the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle" };
+	biggies(v, 4);
+}

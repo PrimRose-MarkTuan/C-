@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <iterator>
+#include <list>
+
+using namespace std;
+
+template <typename Sequence> void print(Sequence const& seq)
+{
+	for (const auto &i : seq)
+		cout << i << " ";
+	cout << endl;
+}
+
+int main()
+{
+	vector<int> vec{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	list<int> l1, l2, l3;
+	copy(vec.cbegin(), vec.cend(), inserter(l1, l1.begin()));
+	copy(vec.cbegin(), vec.cend(), back_inserter(l2));
+	copy(vec.cbegin(), vec.cend(), front_inserter(l3));
+	print(l1);
+	print(l2);
+	print(l3);
+	return 0;
+}

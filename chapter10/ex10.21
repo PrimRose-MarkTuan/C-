@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
+using namespace std;
+
+int main()
+{
+	int val = 7;
+	auto toZero = [&val](){
+		if (val == 0)
+			return true;
+		else
+		{
+			--val;
+			return false;
+		}
+	};
+	while (!toZero())
+	{
+		cout << val << endl;
+	}
+	return 0;
+}

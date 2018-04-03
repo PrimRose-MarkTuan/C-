@@ -1,0 +1,23 @@
+#include <iostream>
+#include <map>
+#include <set>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	multimap<string, string> authors{ { "alan", "DMA" }, { "pezy", "LeetCode" }, { "alan", "CLRS" }, { "wang", "FTP" }, { "pezy", "CP5" }, { "wang", "CPP-Concurrency" }, { "pezy", "CP5" } };
+	map<string, multiset<string>> order_authors;
+	for (const auto&a : authors)
+		order_authors[a.first].insert(a.second);
+	for (const auto& a : order_authors)
+	{
+		cout << a.first << ":";
+		for (const auto& w : a.second)
+			cout << w << " ";
+		cout << endl;
+	}
+	return 0;
+}

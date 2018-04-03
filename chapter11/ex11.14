@@ -1,0 +1,43 @@
+#include <iostream>
+#include <map>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+class Family
+{
+public:
+	map<string, vector<pair<string, string>>> family;
+	void add(const string &familyName,const string &childName,string birthday)
+	{
+		family[familyName].push_back(pair<string, string>(childName, birthday));
+	}
+	ostream& print(ostream &os) const
+	{
+		if (family.empty())
+			return os << "No data right now." << endl;
+		else
+		{
+			for (const auto& c : family)
+			{
+				os << c.first << ":" << endl;
+				for (const auto& i : c.second)
+					os << i.first << " " << i.second << endl;
+			}
+			os << endl;
+		}
+		return os;
+	}
+};
+
+int main()
+{
+	Family family;
+	string message = "Please enter family name,child name and child's birthday:";
+	for (string f, c, b; cout << message << endl, cin >> f >> c >> b; family.add(f, c, b))
+		;
+	family.print(cout);
+	return 0;
+}

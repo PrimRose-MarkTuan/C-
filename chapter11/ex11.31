@@ -1,0 +1,27 @@
+#include <iostream>
+#include <map>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	multimap<string, string> authors{ { "alan", "DMA" }, { "pezy", "LeetCode" }, { "alan", "CLRS" }, { "wang", "FTP" }, { "pezy", "CP5" }, { "wang", "CPP-Concurrency" }, { "pezy", "CP5" } };
+	string author{ "pezy" };
+	string work{ "CP5" };
+	for (auto found = authors.find(author); found != authors.end() && found->first == author;)
+	{
+		if (found->second == work)
+			found = authors.erase(found);
+		else
+		{
+			++found;
+		}
+	}
+	for (auto& author : authors)
+	{
+		cout << author.first << " " << author.second << endl;
+	}
+	return 0;
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+#include <set>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	vector<string> word = { "aa", "bb", "cc" };
+	for (string str; cin >> str;)
+	{
+		if (find(word.begin(), word.end(), str) != word.end())
+		{
+			cout << "excluded!" << endl;
+		}
+		else
+			word.push_back(str);
+	}
+	for (auto const &c : word)
+		cout << c << " ";
+	cout << endl;
+	return 0;
+}

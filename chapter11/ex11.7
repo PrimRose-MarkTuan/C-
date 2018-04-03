@@ -1,0 +1,34 @@
+#include <iostream>
+#include <map>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	map<string, vector<string>> family;
+	string familyName, childName;
+	while ([&]()->bool{
+		cout << "Please enter family name:" << endl;
+		return cin >> familyName&&familyName != "@q";
+	}())
+	{
+		cout << "Please enter child's name:" << endl;
+		while (cin >> childName&&childName != "@q")
+		{
+			family[familyName].push_back(childName);
+		}
+	}
+	for (auto e : family)
+	{
+		cout << e.first << " :" << endl;
+		for (auto c : e.second)
+		{
+			cout << c << " ";
+		}
+		cout << endl;
+	}
+	return 0;
+}

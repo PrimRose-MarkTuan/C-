@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <new>
+#include <memory>
+#include <string>
+
+using namespace std;
+
+void dynamic_vector_input(vector<int> *p);
+void dynamic_vector_print(vector<int> *p);
+
+int main()
+{
+	vector<int> *vec = new vector<int>;
+	dynamic_vector_input(vec);
+	dynamic_vector_print(vec);
+
+	delete vec;
+
+	return 0;
+}
+
+void dynamic_vector_input(vector<int> *p)
+{
+	int i;
+	cout << "Please enter:" << endl;
+	while (cin >> i&&i != 999)
+		p->push_back(i);
+}
+
+void dynamic_vector_print(vector<int> *p)
+{
+	for (const auto &i : *p)
+		cout << i << " ";
+	cout << endl;
+}

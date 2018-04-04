@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include <new>
+#include <memory>
+#include <string>
+
+using namespace std;
+
+void dynamic_vector_input(shared_ptr<vector<int>> p);
+void dynamic_vector_print(shared_ptr<vector<int>> p);
+shared_ptr<vector<int>> dynamic_vector_generator();
+
+int main()
+{
+	auto vec = dynamic_vector_generator();
+	dynamic_vector_input(vec);
+	dynamic_vector_print(vec);
+
+	return 0;
+}
+
+shared_ptr<vector<int>> dynamic_vector_generator()
+{
+	return make_shared<vector<int>>();
+}
+
+void dynamic_vector_input(shared_ptr<vector<int>> p)
+{
+	int i;
+	cout << "Please enter:" << endl;
+	while (cin >> i&&i != 999)
+		p->push_back(i);
+}
+
+void dynamic_vector_print(shared_ptr<vector<int>> p)
+{
+	for (const auto &i : *p)
+		cout << i << " ";
+	cout << endl;
+}

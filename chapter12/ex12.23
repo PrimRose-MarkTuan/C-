@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+	const char *c1 = "Mark Tuan";
+	const char *c2 = "I love you.";
+	auto size = strlen(c1) + strlen(c2) + 1;
+	char *r = new char[size]();
+	strcat_s(r, size, c1);
+	strcat_s(r, size, c2);
+	cout << r << endl;
+	string s1 = "Mark Tuan";
+	string s2 = "I love you.";
+	strcpy_s(r, size, (s1 + s2).c_str());
+	cout << r << endl;
+	delete[]r;
+	return 0;
+}
